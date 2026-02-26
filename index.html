@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>다코스 10주년 해외연수 - 푸꾸옥</title>
+	<style>
+		/* 기본 테마 설정 */
+		:root {
+			--primary-color: #0b2241;
+			--secondary-color: #00a8cc;
+			--bg-color: #f4f7f6;
+			--text-color: #333;
+			--card-bg: #fff;
+			--highlight: #d9534f;
+			--warning: #e74c3c;
+			--time-color: #6c757d;
+		}
+
+		body {
+			font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+			background-color: var(--bg-color);
+			color: var(--text-color);
+			line-height: 1.6;
+			margin: 0;
+			padding: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		/* 로고가 들어간 상단 네비게이션 영역 */
+		.top-nav {
+			background-color: #fff;
+			text-align: center;
+			padding: 20px;
+			border-radius: 12px 12px 0 0;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+		}
+
+		.dacos-main-logo {
+			height: 40px;
+			object-fit: contain;
+		}
+
+		/* 메인 타이틀 헤더 영역 */
+		header {
+			text-align: center;
+			padding: 50px 20px 60px;
+			background: linear-gradient(135deg, #0b2241 20%, #2a1542 60%, #680e46 100%);
+			color: white;
+			border-radius: 0 0 12px 12px;
+			margin-bottom: 25px;
+			/* 버튼과의 간격을 위해 여백 약간 축소 */
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.colorful-badge {
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		header h1 {
+			margin: 0;
+			font-size: 2.5rem;
+			font-weight: 800;
+			letter-spacing: -1px;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+			word-break: keep-all;
+		}
+
+		header p {
+			font-size: 1.2rem;
+			margin-top: 15px;
+			opacity: 0.9;
+			font-weight: 300;
+		}
+
+		/* =========================================
+	   빠른 실행 버튼 (그랩, 구글맵) 스타일
+	   ========================================= */
+		.action-buttons {
+			display: flex;
+			gap: 15px;
+			margin-bottom: 40px;
+		}
+
+		.btn-action {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 16px 10px;
+			border-radius: 12px;
+			color: white !important;
+			text-decoration: none;
+			font-weight: 800;
+			font-size: 1.15rem;
+			box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+			transition: transform 0.15s ease;
+			word-break: keep-all;
+		}
+
+		.btn-action:active {
+			transform: scale(0.96);
+			/* 터치 시 눌리는 효과 */
+		}
+
+		.btn-grab {
+			background-color: #00B14F;
+			/* 그랩 브랜드 컬러 */
+		}
+
+		.btn-maps {
+			background-color: #4285F4;
+			/* 구글 브랜드 컬러 */
+		}
+
+		.btn-icon {
+			font-size: 1.3rem;
+			margin-right: 6px;
+		}
+
+		.section-title {
+			text-align: center;
+			color: var(--primary-color);
+			margin: 50px 0 25px;
+			font-size: 1.8rem;
+		}
+
+		.section-title span {
+			border-bottom: 3px solid #680e46;
+			padding-bottom: 8px;
+		}
+
+		.grid-2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 25px;
+			margin-bottom: 30px;
+		}
+
+		.card {
+			background: var(--card-bg);
+			padding: 25px;
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+			transition: transform 0.2s ease;
+		}
+
+		.card h3 {
+			color: var(--primary-color);
+			margin-top: 0;
+			font-size: 1.25rem;
+			border-bottom: 2px solid #eee;
+			padding-bottom: 10px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		ul {
+			padding-left: 20px;
+			margin-bottom: 0;
+		}
+
+		li {
+			margin-bottom: 8px;
+		}
+
+		.highlight {
+			font-weight: bold;
+			color: var(--highlight);
+		}
+
+		.warning-text {
+			color: var(--warning);
+			font-weight: bold;
+		}
+
+		.notice-box {
+			background: #fff3f3;
+			border-left: 4px solid var(--warning);
+			padding: 12px 15px;
+			margin-top: 15px;
+			border-radius: 0 6px 6px 0;
+			font-size: 0.95rem;
+			line-height: 1.5;
+			word-break: keep-all;
+		}
+
+		/* 아코디언 타임라인 UI 스타일 */
+		.accordion {
+			background-color: var(--card-bg);
+			color: var(--primary-color);
+			cursor: pointer;
+			padding: 16px 20px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 1.15rem;
+			font-weight: bold;
+			transition: 0.3s;
+			border-radius: 8px;
+			margin-bottom: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.accordion.active,
+		.accordion:hover {
+			background-color: #fcf4f8;
+		}
+
+		.accordion:after {
+			content: '\002B';
+			color: #680e46;
+			font-weight: bold;
+			font-size: 1.5rem;
+			margin-left: 10px;
+		}
+
+		.accordion.active:after {
+			content: "\2212";
+		}
+
+		.panel {
+			padding: 0 20px;
+			background-color: var(--card-bg);
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
+			border-radius: 0 0 8px 8px;
+			margin-top: -10px;
+			margin-bottom: 15px;
+		}
+
+		.timeline-list {
+			list-style: none;
+			padding: 20px 0;
+			margin: 0;
+			position: relative;
+		}
+
+		.timeline-list::before {
+			content: '';
+			position: absolute;
+			left: 50px;
+			top: 20px;
+			bottom: 20px;
+			width: 2px;
+			background: #eee;
+		}
+
+		.timeline-item {
+			display: flex;
+			margin-bottom: 20px;
+			position: relative;
+		}
+
+		.time {
+			width: 110px;
+			font-weight: bold;
+			color: var(--time-color);
+			font-size: 0.95rem;
+			text-align: right;
+			padding-right: 20px;
+			position: relative;
+		}
+
+		.time::after {
+			content: '';
+			position: absolute;
+			right: -6px;
+			top: 5px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #680e46;
+			border: 2px solid #fff;
+		}
+
+		.desc {
+			flex: 1;
+			padding-left: 30px;
+			word-break: keep-all;
+		}
+
+		/* 푸터 디자인 */
+		footer {
+			text-align: center;
+			padding: 40px 20px;
+			margin-top: 40px;
+			color: #888;
+			font-size: 0.9rem;
+			border-top: 1px solid #ddd;
+		}
+
+		.footer-icon {
+			height: 30px;
+			opacity: 0.2;
+			margin-bottom: 10px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		/* =========================================
+	   모바일 화면 최적화 (Media Queries)
+	   ========================================= */
+		@media (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+
+			.top-nav {
+				padding: 15px;
+			}
+
+			.dacos-main-logo {
+				height: 30px;
+			}
+
+			header {
+				padding: 40px 15px 50px;
+				margin-bottom: 20px;
+			}
+
+			.colorful-badge {
+				width: 65px;
+				height: 65px;
+				margin-bottom: 15px;
+			}
+
+			header h1 {
+				font-size: 1.8rem;
+			}
+
+			header p {
+				font-size: 1rem;
+				margin-top: 10px;
+			}
+
+			/* 버튼 모바일 최적화 */
+			.action-buttons {
+				gap: 10px;
+				margin-bottom: 30px;
+				padding: 0 5px;
+			}
+
+			.btn-action {
+				padding: 14px 5px;
+				font-size: 1rem;
+			}
+
+			.btn-icon {
+				font-size: 1.1rem;
+			}
+
+			.section-title {
+				font-size: 1.2rem;
+				margin: 40px 0 20px;
+				letter-spacing: -0.5px;
+			}
+
+			.section-title span {
+				white-space: nowrap;
+			}
+
+			.grid-2 {
+				grid-template-columns: 1fr;
+				gap: 15px;
+			}
+
+			.card {
+				padding: 20px;
+			}
+
+			.card h3 {
+				font-size: 1.15rem;
+			}
+
+			.accordion {
+				font-size: 0.9rem;
+				padding: 14px 10px;
+				letter-spacing: -0.5px;
+				word-break: keep-all;
+			}
+
+			.accordion:after {
+				font-size: 1.2rem;
+				margin-left: 5px;
+			}
+
+			.panel {
+				padding: 0 15px;
+			}
+
+			.timeline-list {
+				padding: 15px 0;
+			}
+
+			.timeline-list::before {
+				left: 14px;
+			}
+
+			.timeline-item {
+				flex-direction: column;
+				padding-left: 35px;
+				margin-bottom: 18px;
+			}
+
+			.time {
+				width: auto;
+				text-align: left;
+				padding-right: 0;
+				margin-bottom: 4px;
+				color: var(--primary-color);
+			}
+
+			.time::after {
+				left: -25px;
+				top: 4px;
+				width: 8px;
+				height: 8px;
+			}
+
+			.desc {
+				padding-left: 0;
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+
+			.notice-box {
+				font-size: 0.85rem;
+				padding: 10px 12px;
+			}
+		}
+
+		/* =========================================
+		   하단 네비게이션 및 탭 콘텐츠 스타일
+		   ========================================= */
+		body {
+			padding-bottom: 70px;
+		}
+
+		.bottom-nav {
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			max-width: 1200px;
+			background-color: #fff;
+			display: flex;
+			justify-content: space-around;
+			padding: 10px 0;
+			box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+			border-radius: 12px 12px 0 0;
+		}
+
+		.nav-item {
+			text-align: center;
+			color: #888;
+			text-decoration: none;
+			font-size: 0.9rem;
+			flex: 1;
+			padding: 8px 0;
+			transition: color 0.3s;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.nav-item.active {
+			color: var(--primary-color);
+			font-weight: bold;
+		}
+
+		.nav-item.active::after {
+			content: '◀';
+			display: inline-block;
+			margin-left: 4px;
+			font-size: 0.8rem;
+			vertical-align: middle;
+		}
+
+		.nav-icon {
+			display: block;
+			font-size: 1.5rem;
+			margin-bottom: 4px;
+		}
+
+		.tab-content {
+			display: none;
+			animation: fadeIn 0.3s ease-in-out;
+		}
+
+		.tab-content.active {
+			display: block;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* 체크박스 리스트 스타일 */
+		.checklist-category {
+			margin-bottom: 25px;
+		}
+
+		.checklist-category h3 {
+			background-color: #fdf2f4;
+			color: #d9534f;
+			padding: 10px 15px;
+			border-radius: 8px;
+			margin-bottom: 15px;
+			font-size: 1.2rem;
+			text-align: center;
+			margin-top: 0;
+		}
+
+		.checklist-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+		}
+
+		.check-item {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			font-size: 1.05rem;
+			padding: 8px 5px;
+			border-radius: 6px;
+			transition: background 0.2s;
+		}
+
+		.check-item:active {
+			background-color: #f5f5f5;
+		}
+
+		.check-item input[type="checkbox"] {
+			appearance: none;
+			width: 24px;
+			height: 24px;
+			border: 2px solid #ccc;
+			border-radius: 6px;
+			margin-right: 12px;
+			position: relative;
+			cursor: pointer;
+			background-color: #fff;
+			flex-shrink: 0;
+		}
+
+		.check-item input[type="checkbox"]:checked {
+			background-color: #d9534f;
+			border-color: #d9534f;
+		}
+
+		.check-item input[type="checkbox"]:checked::after {
+			content: '✔';
+			position: absolute;
+			color: white;
+			font-size: 16px;
+			left: 4px;
+			top: -1px;
+		}
+
+		.check-item span {
+			user-select: none;
+			line-height: 1.4;
+		}
+
+		.checklist-container {
+			background: var(--card-bg);
+			padding: 25px;
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+		}
+
+		/* 시계 스타일 */
+		.clock-container {
+			display: flex;
+			gap: 15px;
+			margin-bottom: 30px;
+		}
+
+		.clock-box {
+			flex: 1;
+			background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+			padding: 15px;
+			border-radius: 12px;
+			text-align: center;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+			border: 1px solid #eee;
+		}
+
+		.clock-box h4 {
+			margin: 0 0 10px 0;
+			font-size: 1rem;
+			color: var(--time-color);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+		}
+
+		.clock-time {
+			font-size: 1.6rem;
+			font-weight: 800;
+			color: var(--primary-color);
+			font-variant-numeric: tabular-nums;
+			letter-spacing: 1px;
+		}
+
+		/* 비행편 툴팁 팝업 스타일 */
+		.flight-tooltip-wrapper {
+			display: inline-block;
+			position: relative;
+		}
+
+		.flight-tooltip {
+			position: absolute;
+			bottom: calc(100% + 10px);
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: var(--primary-color);
+			color: white;
+			padding: 6px 12px;
+			border-radius: 6px;
+			font-size: 0.85rem;
+			font-weight: bold;
+			white-space: nowrap;
+			opacity: 0;
+			visibility: hidden;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			z-index: 100;
+			/* 말풍선 꼬리 */
+		}
+
+		.flight-tooltip::after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: var(--primary-color) transparent transparent transparent;
+		}
+
+		.flight-tooltip.show {
+			visibility: visible;
+			animation: popUpFadeOut 2.5s forwards ease-in-out;
+		}
+
+		@keyframes popUpFadeOut {
+			0% {
+				opacity: 0;
+				transform: translate(-50%, 10px);
+			}
+
+			15% {
+				opacity: 1;
+				transform: translate(-50%, 0);
+			}
+
+			80% {
+				opacity: 1;
+				transform: translate(-50%, 0);
+			}
+
+			100% {
+				opacity: 0;
+				transform: translate(-50%, -10px);
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="top-nav">
+			<img src="../images/ic_new_logo_001.png" alt="DACOS Logo" class="dacos-main-logo">
+		</div>
+
+		<!-- === 홈 탭 === -->
+		<div id="tab-home" class="tab-content active">
+			<header>
+				<img src="../images/red_dacos_logo.png" alt="10주년 기념 로고" class="colorful-badge">
+				<h1>2026 (주)다코스 10주년 해외연수</h1>
+				<p>자연을 품은 섬, 베트남 푸꾸옥 5일 🌴</p>
+			</header>
+
+			<div class="action-buttons">
+				<a href="javascript:void(0);" onclick="openGrabApp()" class="btn-action btn-grab">
+					<span class="btn-icon">🚕</span> 그랩(Grab) 실행
+				</a>
+				<a href="https://www.google.com/maps/dir/?api=1&destination=Radisson+Blu+Resort+Phu+Quoc"
+					class="btn-action btn-maps" target="_blank">
+					<span class="btn-icon">🗺️</span> 호텔 길 찾기
+				</a>
+			</div>
+
+			<div class="clock-container">
+				<div class="clock-box">
+					<h4>🇰🇷 한국 시각</h4>
+					<div id="kr-time" class="clock-time">00:00:00</div>
+				</div>
+				<div class="clock-box">
+					<h4>🇻🇳 푸꾸옥 시각</h4>
+					<div id="vn-time" class="clock-time">00:00:00</div>
+				</div>
+			</div>
+
+			<h2 class="section-title"><span>Overview & Highlights</span></h2>
+			<div class="grid-2">
+
+				<div class="card">
+					<h3>📍 행사 개요</h3>
+					<ul>
+						<li><strong>장소:</strong> 베트남 푸꾸옥 (Radisson Blu Resort 5성급)</li>
+						<li><strong>일정 (1차팀):</strong> 2026.02.26(목) ~ 03.02(월)</li>
+						<li><strong>일정 (2차팀):</strong> 2026.02.28(토) ~ 03.04(수)</li>
+						<li><strong>항공:</strong> 진에어(LJ) 오후 출발</li>
+					</ul>
+				</div>
+				<div class="card">
+					<h3>✨ 주요 혜택 및 프로그램</h3>
+					<ul>
+						<li><span class="highlight">다코스 화합의 시간:</span> 씨푸드 특식(랍스터 반 마리) & 기념 만찬</li>
+						<li><span class="highlight">웰컴 야식:</span> 객실당 치킨 1마리 + 맥주 2캔 제공</li>
+						<li><strong>핵심 투어:</strong> 혼똔섬 케이블카, 안터이 호핑투어</li>
+						<li><strong>힐링:</strong> 전신 마사지 120분, 무제한 삼겹살 특식</li>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- // 홈 탭 -->
+
+		<!-- === 여행안내 탭 === -->
+		<div id="tab-info" class="tab-content">
+			<h2 class="section-title"><span>📢 여행 안내 및 유의사항</span></h2>
+
+			<div class="grid-2">
+				<div class="card">
+					<h3>🚩 미팅 장소 및 시간</h3>
+					<ul>
+						<li><strong>집결장소:</strong> 인천 제2여객터미널 3층 1번 출입문 (A카운터 옆)<br />여행사 카운터 內"하나투어"
+						</li>
+						<li><strong>수속장소:</strong> 인천 제2여객터미널 3층 진에어 F 카운터</li>
+						<li><strong>1차팀:</strong> 2/26(목) 14:30</li>
+						<li><strong>2차팀:</strong> 2/28(토) 14:30</li>
+					</ul>
+					<div class="notice-box">
+						※ 진에어는 기내식이 제공되지 않으므로 탑승 전 식사를 권장합니다.<br>
+						※ 여권 만료일이 <strong>6개월 이상</strong> 남아있는지 반드시 확인하세요!
+					</div>
+				</div>
+
+				<div class="card">
+					<h3>🧳 수하물 규정</h3>
+					<ul>
+						<li><strong>위탁 수하물:</strong> 1인 15kg 이내 (1개)</li>
+						<li><strong>기내 수하물:</strong> 10kg 이내 (가방 1개 + 개인 소지품)</li>
+					</ul>
+					<div class="notice-box">
+						<span class="warning-text">[기내 반입만 가능 / 위탁 불가]</span><br>
+						보조배터리(100Wh 이하), 휴대용 선풍기, 전자담배, 라이터(1개)<br>
+						<span class="warning-text">[위탁 수하물 전용]</span><br>
+						100ml를 초과하는 액체류
+					</div>
+				</div>
+
+				<div class="card">
+					<h3>🛂 필수 준비물, 날씨 및 안내사항</h3>
+					<ul>
+						<li><strong>준비물:</strong> <span class="warning-text">여권</span>, 세면도구, 모자, 선글라스, 수영복/래쉬가드,
+							아쿠아슈즈,
+							우산, 얇은 겉옷, 상비약</li>
+						<li><strong>날씨:</strong> 평균 25.8도 ~ 26.7도 (한국 8월 초여름 날씨)</li>
+						<li>여름 의류를 기본으로 하되, 에어컨 및 일교차 대비용 얇은 겉옷을 꼭 챙겨주세요.</li>
+						<li class="warning-text">1차팀은 3/1일 체크아웃 후 2차팀의 숙소에 짐을 맡긴 후에 출발해주세요.</li>
+					</ul>
+					<div class="notice-box">
+						<span class="warning-text">호핑투어 선박 내 샤워시설이 부족하여 2차팀의 숙소에서 씻고 다음 일정 준비하시기 바랍니다.</span>
+					</div>
+				</div>
+
+				<div class="card">
+					<h3>💡 현지 정보 및 면세 한도</h3>
+					<ul>
+						<li><strong>환전:</strong> 미국 달러(US$) 환전 후 현지에서 동(VND)으로 재환전 추천</li>
+						<li><strong>시차/전압:</strong> 한국보다 2시간 느림 / 220V 사용 (어댑터 불필요)</li>
+						<li><strong>한국 입국 면세:</strong> 800달러 (주류 2병, 담배 1보루, 향수 60ml 별도)</li>
+					</ul>
+					<div class="notice-box">
+						<span class="warning-text">※ 베트남 입국 시 전자담배 소지 및 반입이 엄격히 금지됩니다.<br />(적발 시 벌금 부과)</span>
+					</div>
+				</div>
+			</div>
+		</div> <!-- // 여행안내 탭 -->
+
+		<!-- === 일정 탭 === -->
+		<div id="tab-schedule" class="tab-content">
+			<h2 class="section-title"><span>⏰ 1차팀 시간별 상세 일정 (2/26 ~ 3/2)</span></h2>
+			<button class="accordion">Day 1 (2/26 목요일): 인천 출발 및 푸꾸옥 도착</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">14:30</div>
+						<div class="desc">인천공항 제2여객터미널 집결 및 탑승수속</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">17:05</div>
+						<div class="desc">인천 국제공항 출발 (진에어
+							<div class="flight-tooltip-wrapper">
+								<a
+									href="https://www.airport.kr/ap_ko/869/subview.do?enc=Zm5jdDF8QEB8JTJGZGVwJTJGYXBfa28lMkZkZXBQYXNTY2hMaXN0LmRvJTNGaW50ZyUzRCUyNmtleVdvcmQlM0QlMjZjdXJEYXRlJTNEMjAyNjAyMjYlMjZzdGFydFRpbWUlM0QxNzAwJTI2YWlyUG9ydCUzRCUyNmVuZFRpbWUlM0QxNzU5JTI2dG9kYXlEYXRlJTNEMjAyNjAyMjUlMjZ0b21vcnJvd0RhdGUlM0QyMDI2MDIyNiUyNnRvZGF5VGltZSUzRDE3NDQlMjZjdXJTdGltZSUzRDE3MDAlMjZjdXJFdGltZSUzRDE3NTklMjZzaXRlSWQlM0RhcF9rbyUyNmxhbmdTZSUzRGtvJTI2c2NoZWR1bGVMaXN0TGVuZ3RoJTNEMSUyNnRlcm1JZCUzRFQyJTI2ZGF5U2VsJTNEMjAyNjAyMjYlMjZmcm9tVGltZSUzRDE3MDAlMjZ0b1RpbWUlM0QxNzU5JTI2YWlycG9ydCUzRFBRQyUyNmFpcmxpbmUlM0RMSiUyNmFpcnBsYW5lJTNETEowOTElMjY%3D">LJ0091</a>
+								<span class="flight-tooltip">클릭하여 항공편조회를 해보세요!</span>
+							</div>)
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">21:00 - 22:30</div>
+						<div class="desc">푸꾸옥 도착, 입국 수속 및 리조트 이동</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">22:30 - 23:00</div>
+						<div class="desc">리조트 체크인 및 웰컴 야식(치킨+맥주) 제공</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 2 (2/27 금요일): 혼똔섬 어드벤처 & 선셋타운</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">호텔 조식</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">09:00 - 11:30</div>
+						<div class="desc">오전 자유시간 및 리조트 부대시설 이용</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">11:50 - 13:00</div>
+						<div class="desc">가이드 미팅 및 중식(망고 레스토랑 뷔페)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">13:30 - 16:30</div>
+						<div class="desc">혼똔섬 케이블카 투어 & 아쿠아 토피아 자유시간</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">17:00 - 18:00</div>
+						<div class="desc">키스 브릿지 관광</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">18:30 - 19:20</div>
+						<div class="desc">석식 (선셋 라군 레스토랑 현지식)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">19:00 - 20:10</div>
+						<div class="desc">선셋타운 나이트 투어 (부이페스트 야시장)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">21:00 - 22:00</div>
+						<div class="desc">키스 오브 더 씨 공연 관람</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 3 (2/28 토요일): 전일 자유일정 및 힐링</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">리조트 조식</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">08:30 ~ 이후</div>
+						<div class="desc">전일 자유 일정</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 4 (3/1 일요일): 호핑투어 & 다코스 화합의 밤</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">리조트 조식 후 체크아웃</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">09:00 - 11:50</div>
+						<div class="desc">섬 일주 호핑투어 (스노클링, 낚시)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">12:00 - 12:40</div>
+						<div class="desc">중식 (현지식 호핑식)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">13:00 - 14:10</div>
+						<div class="desc"><span class="highlight">리조트 귀환 후 2차팀 숙소에서 샤워 및 환복</span></div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">14:30 - 16:30</div>
+						<div class="desc">쇼핑센터 방문 (2회)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">16:30 - 17:30</div>
+						<div class="desc">푸꾸옥 명소 투어 (사오비치, 딘커우사원, 호국사)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">17:40 - 19:20</div>
+						<div class="desc"><span class="highlight">(주)다코스 10주년 해외연수 화합의 시간 (씨푸드+랍스터)</span></div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">19:30 - 21:30</div>
+						<div class="desc">공항으로 이동 및 탑승수속</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">22:10</div>
+						<div class="desc">푸꾸옥 출발 (진에어
+							<div class="flight-tooltip-wrapper">
+								<a
+									href="https://www.airport.kr/ap_ko/872/subview.do?enc=Zm5jdDJ8QEB8JTJGYXJyJTJGYXBfa28lMkZhcnJQYXNTY2hMaXN0LmRvJTNGaW50ZyUzRCUyNmtleVdvcmQlM0QlMjZjdXJEYXRlJTNEMjAyNjAyMjUlMjZzdGFydFRpbWUlM0QxNzAwJTI2YWlyUG9ydCUzRCUyNmVuZFRpbWUlM0QxNzU5JTI2dG9kYXlEYXRlJTNEMjAyNjAyMjUlMjZ0b21vcnJvd0RhdGUlM0QyMDI2MDIyNiUyNnRvZGF5VGltZSUzRDE3NDklMjZjdXJTdGltZSUzRDE3MDAlMjZjdXJFdGltZSUzRDE3NTklMjZzaXRlSWQlM0RhcF9rbyUyNmxhbmdTZSUzRGtvJTI2ZXhpdERvb3IyJTNEJTI2c2NoZWR1bGVMaXN0TGVuZ3RoJTNEMCUyNnRlcm1JZCUzRCUyNmRheVNlbCUzRDIwMjYwMzAyJTI2ZnJvbVRpbWUlM0QwMDAwJTI2dG9UaW1lJTNEMTc1OSUyNmFpcnBvcnQlM0QlMjZhaXJsaW5lJTNEJTI2YWlycGxhbmUlM0RMSjA5MiUyNg%3D%3D">LJ0092</a>
+								<span class="flight-tooltip">클릭하여 항공편조회를 해보세요!</span>
+							</div>)
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<h2 class="section-title"><span>⏰ 2차팀 시간별 상세 일정 (2/28 ~ 3/4)</span></h2>
+			<button class="accordion">Day 1 (2/28 토요일): 인천 출발 및 푸꾸옥 도착</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">14:30</div>
+						<div class="desc">인천공항 제2여객터미널 집결 및 탑승수속</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">17:05</div>
+						<div class="desc">인천 국제공항 출발 (진에어
+							<div class="flight-tooltip-wrapper">
+								<a
+									href="https://www.airport.kr/ap_ko/869/subview.do?enc=Zm5jdDF8QEB8JTJGZGVwJTJGYXBfa28lMkZkZXBQYXNTY2hMaXN0LmRvJTNGaW50ZyUzRCUyNmtleVdvcmQlM0QlMjZjdXJEYXRlJTNEMjAyNjAyMjYlMjZzdGFydFRpbWUlM0QxNzAwJTI2YWlyUG9ydCUzRFBRQyUyNmVuZFRpbWUlM0QxNzU5JTI2dG9kYXlEYXRlJTNEMjAyNjAyMjUlMjZ0b21vcnJvd0RhdGUlM0QyMDI2MDIyNiUyNnRvZGF5VGltZSUzRDE3NDUlMjZjdXJTdGltZSUzRDE3MDAlMjZjdXJFdGltZSUzRDE3NTklMjZzaXRlSWQlM0RhcF9rbyUyNmxhbmdTZSUzRGtvJTI2c2NoZWR1bGVMaXN0TGVuZ3RoJTNEMSUyNnRlcm1JZCUzRFQyJTI2ZGF5U2VsJTNEMjAyNjAyMjglMjZmcm9tVGltZSUzRDE3MDAlMjZ0b1RpbWUlM0QxNzU5JTI2YWlycG9ydCUzRFBRQyUyNmFpcmxpbmUlM0RMSiUyNmFpcnBsYW5lJTNETEowOTElMjY%3D">LJ0091</a>
+								<span class="flight-tooltip">클릭하여 항공편조회를 해보세요!</span>
+							</div>)
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">21:00 - 22:30</div>
+						<div class="desc">푸꾸옥 도착, 입국 수속 및 리조트 이동</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">22:30 - 23:00</div>
+						<div class="desc">리조트 체크인 및 웰컴 야식(치킨+맥주) 제공</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 2 (3/1 일요일): 호핑투어 & 다코스 화합의 밤</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">호텔 조식</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">09:00 - 11:50</div>
+						<div class="desc">섬 일주 호핑투어 (스노클링, 낚시)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">12:00 - 12:40</div>
+						<div class="desc">중식 (현지식 호핑식)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">13:10 - 17:10</div>
+						<div class="desc">리조트 귀환 후 휴식 및 자유시간</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">17:40 - 19:20</div>
+						<div class="desc"><span class="highlight">(주)다코스 10주년 해외연수 화합의 시간 (씨푸드+랍스터)</span></div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">19:40 - 20:40</div>
+						<div class="desc">선셋타운 나이트 투어 (부이페스트 야시장)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">21:00 - 22:00</div>
+						<div class="desc">키스 오브 더 씨 공연 관람</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 3 (3/2 월요일): 전일 자유일정 및 힐링</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">리조트 조식</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">08:30 ~ 이후</div>
+						<div class="desc">전일 자유 일정</div>
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Day 4 (3/3 화요일): 혼똔섬 어드벤처 & 선셋타운</button>
+			<div class="panel">
+				<ul class="timeline-list">
+					<li class="timeline-item">
+						<div class="time">06:00 - 08:30</div>
+						<div class="desc">리조트 조식 후 체크아웃</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">09:00 - 12:00</div>
+						<div class="desc">혼똔섬 케이블카 투어 & 아쿠아 토피아 자유시간</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">12:30 - 13:20</div>
+						<div class="desc">중식 (망고 레스토랑 뷔페식)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">13:40 - 15:40</div>
+						<div class="desc">쇼핑센터 방문 (2회)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">16:00 - 18:00</div>
+						<div class="desc">푸꾸옥 명소 투어 (사오비치, 딘커우사원, 호국사)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">18:30 - 19:30</div>
+						<div class="desc">석식 (선셋 레스토랑 현지식)</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">19:30 - 21:30</div>
+						<div class="desc">공항으로 이동 및 탑승수속</div>
+					</li>
+					<li class="timeline-item">
+						<div class="time">22:10</div>
+						<div class="desc">푸꾸옥 출발 (진에어
+							<div class="flight-tooltip-wrapper">
+								<a
+									href="https://www.airport.kr/ap_ko/872/subview.do?enc=Zm5jdDJ8QEB8JTJGYXJyJTJGYXBfa28lMkZhcnJQYXNTY2hMaXN0LmRvJTNGaW50ZyUzRCUyNmtleVdvcmQlM0QlMjZjdXJEYXRlJTNEMjAyNjAzMDIlMjZzdGFydFRpbWUlM0QwMDAwJTI2YWlyUG9ydCUzRCUyNmVuZFRpbWUlM0QxNzU5JTI2dG9kYXlEYXRlJTNEMjAyNjAyMjYlMjZ0b21vcnJvd0RhdGUlM0QyMDI2MDIyNyUyNnRvZGF5VGltZSUzRDEwMzMlMjZjdXJTdGltZSUzRDAwMDAlMjZjdXJFdGltZSUzRDE3NTklMjZzaXRlSWQlM0RhcF9rbyUyNmxhbmdTZSUzRGtvJTI2ZXhpdERvb3IyJTNEJTI2c2NoZWR1bGVMaXN0TGVuZ3RoJTNEMSUyNnRlcm1JZCUzRCUyNmRheVNlbCUzRDIwMjYwMzA0JTI2ZnJvbVRpbWUlM0QwMDAwJTI2dG9UaW1lJTNEMTc1OSUyNmFpcnBvcnQlM0QlMjZhaXJsaW5lJTNEJTI2YWlycGxhbmUlM0RMSjA5MiUyNg%3D%3D">LJ0092</a>
+								<span class="flight-tooltip">클릭하여 항공편조회를 해보세요!</span>
+							</div>)
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div> <!-- // 일정 탭 -->
+
+		<!-- === 준비물 탭 === -->
+		<div id="tab-checklist" class="tab-content">
+			<h2 class="section-title"><span>📝 동남아 여행 준비물 체크리스트</span></h2>
+			<div class="checklist-container">
+
+				<div class="checklist-category">
+					<h3>필수품</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>여권 &amp; 비자</span></label>
+						<label class="check-item"><input type="checkbox"><span>숙소 &amp; 항공 바우처</span></label>
+						<label class="check-item"><input type="checkbox"><span>신분증</span></label>
+						<label class="check-item"><input type="checkbox"><span>유심 / 이심</span></label>
+						<label class="check-item"><input type="checkbox"><span>해외사용가능 카드</span></label>
+						<label class="check-item"><input type="checkbox"><span>현지 화폐</span></label>
+						<label class="check-item"><input type="checkbox"><span>여행자보험</span></label>
+					</div>
+				</div>
+
+				<div class="checklist-category">
+					<h3>의류</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>얇은 긴팔</span></label>
+						<label class="check-item"><input type="checkbox"><span>수영복</span></label>
+						<label class="check-item"><input type="checkbox"><span>속옷 &amp; 양말</span></label>
+						<label class="check-item"><input type="checkbox"><span>챙 넓은 모자</span></label>
+						<label class="check-item"><input type="checkbox"><span>선글라스</span></label>
+						<label class="check-item"><input type="checkbox"><span>크로스백</span></label>
+						<label class="check-item"><input type="checkbox"><span>얇은 담요</span></label>
+						<label class="check-item"><input type="checkbox"><span>슬리퍼</span></label>
+					</div>
+				</div>
+
+				<div class="checklist-category">
+					<h3>상비약</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>모기기피제</span></label>
+						<label class="check-item"><input type="checkbox"><span>진드기패치</span></label>
+						<label class="check-item"><input type="checkbox"><span>설사약</span></label>
+						<label class="check-item"><input type="checkbox"><span>소화제</span></label>
+						<label class="check-item"><input type="checkbox"><span>멀미약</span></label>
+						<label class="check-item"><input type="checkbox"><span>반창고 및 연고</span></label>
+						<label class="check-item"><input type="checkbox"><span>소염제 / 진통제</span></label>
+					</div>
+				</div>
+
+				<div class="checklist-category">
+					<h3>미용</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>세안용품</span></label>
+						<label class="check-item"><input type="checkbox"><span>개인 화장품</span></label>
+						<label class="check-item"><input type="checkbox"><span>자외선 차단제</span></label>
+						<label class="check-item"><input type="checkbox"><span>알로에 젤</span></label>
+						<label class="check-item"><input type="checkbox"><span>드라이샴푸</span></label>
+					</div>
+				</div>
+
+				<div class="checklist-category">
+					<h3>전자기기</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>멀티어댑터</span></label>
+						<label class="check-item"><input type="checkbox"><span>보조배터리</span></label>
+						<label class="check-item"><input type="checkbox"><span>이어폰 / 헤드셋</span></label>
+						<label class="check-item"><input type="checkbox"><span>셀카봉 / 삼각대</span></label>
+						<label class="check-item"><input type="checkbox"><span>충전기</span></label>
+						<label class="check-item"><input type="checkbox"><span>드라이기</span></label>
+						<label class="check-item"><input type="checkbox"><span>손풍기</span></label>
+					</div>
+				</div>
+
+				<div class="checklist-category">
+					<h3>동남아 필수!</h3>
+					<div class="checklist-grid">
+						<label class="check-item"><input type="checkbox"><span>우산 및 우비</span></label>
+						<label class="check-item"><input type="checkbox"><span>보냉 텀블러</span></label>
+						<label class="check-item"><input type="checkbox"><span>휴지 / 물티슈</span></label>
+						<label class="check-item"><input type="checkbox"><span>샤워필터</span></label>
+						<label class="check-item"><input type="checkbox"><span>나무젓가락</span></label>
+						<label class="check-item"><input type="checkbox"><span>위생장갑</span></label>
+						<label class="check-item"><input type="checkbox"><span>빵칼 / 접이식과도</span></label>
+						<label class="check-item"><input type="checkbox"><span>비닐봉지 / 지퍼백</span></label>
+					</div>
+				</div>
+
+			</div>
+		</div> <!-- // 준비물 탭 -->
+
+		<footer>
+			<img src="../images/only_Icon.png" alt="DACOS Icon" class="footer-icon">
+			<p>2026 (주)다코스 10주년 해외연수 안내페이지 | 개발팀 임세준</p>
+		</footer>
+	</div>
+
+	<!-- 하단 네비게이션 바 -->
+	<nav class="bottom-nav">
+		<a href="#" class="nav-item active" onclick="switchTab('tab-home', this); return false;">
+			<span class="nav-icon">🏠</span>홈
+		</a>
+		<a href="#" class="nav-item" onclick="switchTab('tab-schedule', this); return false;">
+			<span class="nav-icon">📅</span>일정
+		</a>
+		<a href="#" class="nav-item" onclick="switchTab('tab-info', this); return false;">
+			<span class="nav-icon">📢</span>여행안내
+		</a>
+		<a href="#" class="nav-item" onclick="switchTab('tab-checklist', this); return false;">
+			<span class="nav-icon">🎒</span>준비물
+		</a>
+	</nav>
+
+	<script>
+		function switchTab(tabId, el) {
+			var contents = document.getElementsByClassName("tab-content");
+			for (var j = 0; j < contents.length; j++) {
+				contents[j].classList.remove("active");
+			}
+			document.getElementById(tabId).classList.add("active");
+
+			var navItems = document.getElementsByClassName("nav-item");
+			for (var j = 0; j < navItems.length; j++) {
+				navItems[j].classList.remove("active");
+			}
+			el.classList.add("active");
+
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+
+		function openGrabApp() {
+			var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+			if (isAndroid) {
+				window.location.href = "intent://open#Intent;scheme=grab;package=com.grabtaxi.passenger;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.grabtaxi.passenger;end";
+			} else {
+				window.location.href = "grab://";
+				setTimeout(function () {
+					window.location.href = "https://apps.apple.com/app/id647268330";
+				}, 1500);
+			}
+		}
+
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+
+					// 패널이 닫힐 때 하위 툴팁 애니메이션 클래스 제거 (재사용을 위함)
+					var tooltips = panel.querySelectorAll('.flight-tooltip');
+					for (var j = 0; j < tooltips.length; j++) {
+						tooltips[j].classList.remove('show');
+					}
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+
+					// 패널이 열리면 하위 툴팁에 애니메이션 클래스 추가
+					var tooltips = panel.querySelectorAll('.flight-tooltip');
+					for (var j = 0; j < tooltips.length; j++) {
+						// 리플로우를 발생시켜 애니메이션 재시작
+						void tooltips[j].offsetWidth;
+						tooltips[j].classList.add('show');
+					}
+				}
+			});
+		}
+
+		function updateClocks() {
+			var now = new Date();
+
+			// 한국 시간 포맷
+			var krOptions = { timeZone: 'Asia/Seoul', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+			var krTimeString = now.toLocaleTimeString('ko-KR', krOptions);
+			document.getElementById('kr-time').innerText = krTimeString;
+
+			// 베트남 시간 포맷
+			var vnOptions = { timeZone: 'Asia/Ho_Chi_Minh', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+			var vnTimeString = now.toLocaleTimeString('ko-KR', vnOptions);
+			document.getElementById('vn-time').innerText = vnTimeString;
+		}
+
+		updateClocks();
+		setInterval(updateClocks, 1000);
+	</script>
+
+</body>
+
+</html>
